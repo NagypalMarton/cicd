@@ -1,4 +1,4 @@
- name: Test, build and release
+name: Test, build and release
 on: [push]
 jobs:
   unit-test:
@@ -39,4 +39,3 @@ jobs:
           title: "Development build"
           files: |
             simplecalculator.tar.gz
-            
