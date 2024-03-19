@@ -9,11 +9,10 @@ jobs:
         run: |
           sudo apt install check pkg-config
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Building with check
         run: |
-          gcc operations.c check_operations.c -o check_operations \
-	    `pkg-config --cflags --libs check`
+          gcc operations.c check_operations.c -o check_operations \ pkg-config --cflags --libs check`
       - name: Testing with check
         run: |
           ./check_operations
