@@ -33,7 +33,7 @@ jobs:
     name: Build and delivery
     permissions:
       contents: write
-    needs: [unit-test]
+    needs: [unit-test, static-analysis]
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -41,7 +41,7 @@ jobs:
       - name: Building
         run: |
           gcc operations.c simplecalculator.c -o simplecalculator
-        name: Creating neptun.txt
+      - name: Creating neptun.txt
         run: |
           echo "Q88P3E" > neptun.txt
       - name: Creating tar.gz
